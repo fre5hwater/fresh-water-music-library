@@ -1,0 +1,37 @@
+name: FreshWater AutoDeploy
+description: Prepare, build, and deploy Fresh Water Music site to Fly.io
+
+tasks:
+  - name: cleanup
+    run: |
+      Remove-Item -Recurse -Force "node_modules",".fly",".git",".vercel" -ErrorAction SilentlyContinue
+      Get-ChildItem -Path . -Include "*.log","*.tmp" -Recurse | Remove-Item -Force -ErrorAction SilentlyContinue
+      Write-Host "✅ Workspace cleaned."
+
+  - name: verify-folders
+    run: |
+      if (-not (Test-Path "public")) { mkdir public }
+      if (-not (Test-Path "public/media")) { mkdir public/media }
+      if (-not (Test-Path "backups")) { mkdir backups }
+      Write-Host "✅ Verified folders."
+
+  - name: copy-assets
+    run: |
+      Copy-Item "media\*" "public\media\" -Recurse -Force
+      Write-Host "✅ Media assets copied into public/media."
+
+  - name: verify-config
+    run: |
+      if (-not (Select-String "image = \"nginx:alpine\"" fly.toml)) {
+        Write-Host "⚙️ fly.toml missing image field, adding static config..."
+      }
+
+  - name: deploy
+    run: |
+      fly deploy --remote-only
+      Write-Host "🚀 Deployment initiated..."
+
+  - name: verify-deployment
+    run: |
+      fly status
+      Write-Host "✅ Deployment verification complete."

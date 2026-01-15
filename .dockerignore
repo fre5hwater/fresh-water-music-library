@@ -1,0 +1,25 @@
+# Ignore unnecessary files and directories
+node_modules
+backups
+media
+.git
+.gitignore
+fly.toml
+flyctl*
+.DS_Store
+*.log
+*.tmp
+*.bak
+*.zip
+*.rar
+*.7z
+*.psd
+*.mp3
+*.wav
+*.mov
+*.mkv
+*.avi
+*.exe
+*.dll
+.vscode
+*.md
