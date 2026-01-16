@@ -4,7 +4,6 @@ backups
 media
 .git
 .gitignore
-fly.toml
 flyctl*
 .DS_Store
 *.log
@@ -13,15 +12,6 @@ flyctl*
 *.zip
 *.rar
 *.7z
-*.psd
-*.mp4
-*.mp3
-*.wav
-*.mov
-*.mkv
-*.avi
-*.webm
 *.exe
 *.dll
 .vscode
-*.md
