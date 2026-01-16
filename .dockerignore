@@ -14,11 +14,13 @@ flyctl*
 *.rar
 *.7z
 *.psd
+*.mp4
 *.mp3
 *.wav
 *.mov
 *.mkv
 *.avi
+*.webm
 *.exe
 *.dll
 .vscode
