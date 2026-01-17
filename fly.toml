@@ -1,0 +1,9 @@
+app = "fresh-water-music-library"
+
+[build]
+  image = "nginx:alpine"
+
+[[statics]]
+  guest_path = "/usr/share/nginx/html"
+  url_prefix = "/"
+  source = "out"
