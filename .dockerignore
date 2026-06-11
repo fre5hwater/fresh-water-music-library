@@ -1,0 +1,13 @@
+backups
+media
+.git
+.gitignore
+flyctl*
+.DS_Store
+*.log
+*.zip
+*.rar
+*.7z
+*.exe
+*.dll
+.vscode
