@@ -1,0 +1,17 @@
+# Ignore unnecessary files and directories
+node_modules
+backups
+media
+.git
+.gitignore
+flyctl*
+.DS_Store
+*.log
+*.tmp
+*.bak
+*.zip
+*.rar
+*.7z
+*.exe
+*.dll
+.vscode
